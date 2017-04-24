@@ -157,8 +157,30 @@ console.log(splitCharacters(punctdSen).map(takeOut).join(''));
  * each number is negative (true if yes, false if no).
  */
 
+let numbas = [4, -4, 5, -5, 7, -7, -8, 8];
+
+function negloop(count) {
+    let boolarray = [];
+    for (let i = 0; i < count.length; i++) {
+        if (count[i] < 0) {
+            boolarray.push(true);
+        } else (boolarray.push(false));
+    }
+    return boolarray;
+}
+
+function neg(num) {
+    if (num < 0) {
+        return true
+    } else {
+        return false
+    }
+}
 
 
+
+console.log(negloop(numbas));
+console.log(numbas.map(neg));
 
 /**
  * Problem #7
@@ -169,3 +191,25 @@ console.log(splitCharacters(punctdSen).map(takeOut).join(''));
  * You will need to use the Pythagorean theorem to solve this!
  * https://en.wikipedia.org/wiki/Pythagorean_theorem#Other_forms_of_the_theorem
  */
+
+function allDistance(creatures) {
+    let distance = [];
+    for (let i = 0; i < creatures.length; i++) {
+        let csquared = (creatures[i].x * creatures[i].x) + (creatures[i].y * creatures[i].y);
+        let c = Math.sqrt(csquared);
+        distance.push(c);
+    }
+    return distance;
+}
+
+console.log(allDistance(animals));
+
+function GetDistance(wilbur) {
+    let csquared = (wilbur.x * wilbur.x) + (wilbur.y * wilbur.y);
+    let c = Math.sqrt(csquared);
+    return c;
+}
+
+console.log(animals.map(GetDistance));
+
+
